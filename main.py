@@ -5,8 +5,12 @@ url = (
     "apiKey=da82b67ed137451ab20fe574f738a71e"
 )
 
+# make request
 request = requests.get(url)
+# get json from response data
+content = request.json()
 
-content = request.text
-
-print(content)
+# access articles titles and descriptions
+for article in content["articles"]:
+    print(article["title"])
+    print(article["description"])
