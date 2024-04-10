@@ -27,7 +27,7 @@ Hi! how are you?
 here's some news:
 
 {article["title"]}
-{article["content"]}
+{article["description"]}
 
 source: {article["source"]["name"]}
 author: {article["author"]}
@@ -36,6 +36,6 @@ author: {article["author"]}
 #send email
 with smtplib.SMTP_SSL(host, port, context=context) as server:
     server.login(username, password)
-    server.sendmail(username, receiver, message.encode('utf-8'))
+    server.sendmail(username, receiver, message.encode('utf-8'), mail_options=())
 
 
